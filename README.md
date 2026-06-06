@@ -1,384 +1,281 @@
 <div align="center">
-
-
-
-\# 🎵 yt-mp3
-
-
-
-\*\*Self-hosted YouTube to MP3 downloader — no cloud, no accounts, no limits.\*\*
-
-
-
-!\[Python](https://img.shields.io/badge/Python-3.10+-8b5cf6?style=flat-square\&logo=python\&logoColor=white)
-
-!\[Flask](https://img.shields.io/badge/Flask-3.0-7c3aed?style=flat-square\&logo=flask\&logoColor=white)
-
-!\[yt-dlp](https://img.shields.io/badge/yt--dlp-latest-6d28d9?style=flat-square)
-
-!\[License](https://img.shields.io/badge/license-MIT-a78bfa?style=flat-square)
-
-
-
-\*Built in Spain 🇪🇸 — README available in \[English](#english) and \[Español](#español)\*
-
-
-
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=7c3aed&height=200&section=header&text=yt-mp3&fontSize=80&fontColor=ffffff&fontAlignY=38&desc=Self-hosted%20YouTube%20%E2%86%92%20MP3%20downloader&descAlignY=58&descSize=18&descColor=c4b5fd" width="100%"/>
 </div>
-
-
-
-\---
-
-
-
-<a name="english"></a>
-
-\## 🇬🇧 English
-
-
-
-\### What is this?
-
-
-
-A fully local web app to download audio from any YouTube video and save it as an MP3 directly on your machine. No third-party services, no API keys, no upload limits — everything runs on your own computer.
-
-
-
-Built with \*\*Flask\*\* (Python backend), \*\*yt-dlp\*\* (YouTube audio extraction) and \*\*ffmpeg\*\* (MP3 conversion). The UI is a single dark-themed HTML file with real-time progress tracking.
-
-
-
-\### Features
-
-
-
-\- 🎧 Download any YouTube video as MP3
-
-\- 🔊 Choose quality: 128 / 192 / 320 kbps
-
-\- 📊 Real-time progress bar while downloading
-
-\- 📁 Built-in library — browse and re-download past files
-
-\- 🌑 Dark purple UI — looks good, runs local
-
-\- ⚡ No frameworks, no npm, no build step
-
-
-
-\### Prerequisites
-
-
-
-\- \*\*Python 3.10+\*\* → \[python.org](https://www.python.org/downloads/)
-
-\- \*\*ffmpeg\*\* installed and on your PATH
-
-
-
-Install ffmpeg:
-
-
-
-| OS | Command |
-
-|---|---|
-
-| Windows | `winget install ffmpeg` |
-
-| macOS | `brew install ffmpeg` |
-
-| Linux | `sudo apt install ffmpeg` |
-
-
-
-Verify it works: `ffmpeg -version`
-
-
-
-\### Installation
-
-
-
-```bash
-
-\# 1. Clone the repo
-
-git clone https://github.com/YOUR\_USERNAME/yt-mp3.git
-
-cd yt-mp3
-
-
-
-\# 2. (Optional but recommended) create a virtual environment
-
-python -m venv venv
-
-\# Windows
-
-venv\\Scripts\\activate
-
-\# macOS / Linux
-
-source venv/bin/activate
-
-
-
-\# 3. Install dependencies
-
-pip install -r requirements.txt
-
-
-
-\# 4. Run
-
-python app.py
-
-```
-
-
-
-Then open \*\*http://localhost:8000\*\* in your browser. That's it.
-
-
-
-\### Usage
-
-
-
-1\. Paste a YouTube URL into the input field
-
-2\. Select audio quality (192 kbps recommended for most uses)
-
-3\. Hit \*\*Descargar audio\*\*
-
-4\. Watch the progress bar — it will tell you when it's downloading vs converting
-
-5\. Click the green button to save the MP3 to your device
-
-6\. All your past downloads are listed in the \*\*Biblioteca\*\* section below
-
-
-
-MP3 files are saved to the `downloads/` folder inside the project.
-
-
-
-\### Project structure
-
-
-
-```
-
-yt-mp3/
-
-├─ app.py              # Flask server — handles download jobs \& serves files
-
-├─ requirements.txt    # Python dependencies
-
-├─ downloads/          # Where MP3s are saved (auto-created)
-
-└─ static/
-
-&#x20;  └─ index.html       # Entire frontend — one file, no build step
-
-```
-
-
-
-\### ⚠️ Important
-
-
-
-This app is designed for \*\*local use only\*\*. It has no authentication, no rate limiting, and no security hardening. Do not expose it on a public server.
-
-
-
-Only download content you have the right to download.
-
-
-
-\---
-
-
-
-<a name="español"></a>
-
-\## 🇪🇸 Español
-
-
-
-\### ¿Qué es esto?
-
-
-
-Una app web completamente local para descargar el audio de cualquier vídeo de YouTube y guardarlo como MP3 directamente en tu máquina. Sin servicios externos, sin claves de API, sin límites de subida — todo corre en tu propio ordenador.
-
-
-
-Hecho con \*\*Flask\*\* (backend Python), \*\*yt-dlp\*\* (extracción de audio de YouTube) y \*\*ffmpeg\*\* (conversión a MP3). La interfaz es un único archivo HTML con tema oscuro y seguimiento de progreso en tiempo real.
-
-
-
-\### Características
-
-
-
-\- 🎧 Descarga cualquier vídeo de YouTube como MP3
-
-\- 🔊 Elige la calidad: 128 / 192 / 320 kbps
-
-\- 📊 Barra de progreso en tiempo real
-
-\- 📁 Biblioteca integrada — consulta y vuelve a bajar archivos anteriores
-
-\- 🌑 Interfaz oscura en morado — estética cuidada, todo local
-
-\- ⚡ Sin frameworks, sin npm, sin build
-
-
-
-\### Requisitos
-
-
-
-\- \*\*Python 3.10+\*\* → \[python.org](https://www.python.org/downloads/)
-
-\- \*\*ffmpeg\*\* instalado y en el PATH
-
-
-
-Instala ffmpeg:
-
-
-
-| Sistema | Comando |
-
-|---|---|
-
-| Windows | `winget install ffmpeg` |
-
-| macOS | `brew install ffmpeg` |
-
-| Linux | `sudo apt install ffmpeg` |
-
-
-
-Comprueba que funciona: `ffmpeg -version`
-
-
-
-\### Instalación
-
-
-
-```bash
-
-\# 1. Clona el repo
-
-git clone https://github.com/TU\_USUARIO/yt-mp3.git
-
-cd yt-mp3
-
-
-
-\# 2. (Opcional pero recomendado) crea un entorno virtual
-
-python -m venv venv
-
-\# Windows
-
-venv\\Scripts\\activate
-
-\# macOS / Linux
-
-source venv/bin/activate
-
-
-
-\# 3. Instala las dependencias
-
-pip install -r requirements.txt
-
-
-
-\# 4. Arranca
-
-python app.py
-
-```
-
-
-
-Luego abre \*\*http://localhost:8000\*\* en el navegador. Listo.
-
-
-
-\### Uso
-
-
-
-1\. Pega una URL de YouTube en el campo de texto
-
-2\. Selecciona la calidad de audio (192 kbps recomendado para uso general)
-
-3\. Pulsa \*\*Descargar audio\*\*
-
-4\. Mira la barra de progreso — te indica si está descargando o convirtiendo
-
-5\. Cuando termine, pulsa el botón verde para guardar el MP3
-
-6\. Todas tus descargas anteriores aparecen en la sección \*\*Biblioteca\*\*
-
-
-
-Los archivos MP3 se guardan en la carpeta `downloads/` dentro del proyecto.
-
-
-
-\### Estructura del proyecto
-
-
-
-```
-
-yt-mp3/
-
-├─ app.py              # Servidor Flask — gestiona los trabajos y sirve archivos
-
-├─ requirements.txt    # Dependencias Python
-
-├─ downloads/          # Donde se guardan los MP3 (se crea automáticamente)
-
-└─ static/
-
-&#x20;  └─ index.html       # Frontend completo — un solo archivo, sin build
-
-```
-
-
-
-\### ⚠️ Importante
-
-
-
-Esta app está diseñada \*\*solo para uso local\*\*. No tiene autenticación, ni rate limiting, ni medidas de seguridad. No la expongas en un servidor público.
-
-
-
-Descarga únicamente contenido que tengas derecho a descargar.
-
-
-
-\---
-
-
 
 <div align="center">
 
-Made with 🟣 in Spain
+<br/>
+
+[![Python](https://img.shields.io/badge/Python-3.10%2B-7c3aed?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Flask](https://img.shields.io/badge/Flask-3.0-6d28d9?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
+[![yt-dlp](https://img.shields.io/badge/yt--dlp-latest-8b5cf6?style=for-the-badge&logo=youtube&logoColor=white)](https://github.com/yt-dlp/yt-dlp)
+[![ffmpeg](https://img.shields.io/badge/ffmpeg-required-a78bfa?style=for-the-badge&logo=ffmpeg&logoColor=white)](https://ffmpeg.org/)
+[![License](https://img.shields.io/badge/License-MIT-c4b5fd?style=for-the-badge)](LICENSE)
+
+<br/>
+
+> **No cloud. No accounts. No limits.**
+> Download audio from any YouTube video directly to your machine.
+
+<br/>
+
+**[🇬🇧 English](#-english) · [🇪🇸 Español](#-español)**
+
+<br/>
 
 </div>
 
+---
+
+## 🇬🇧 English
+
+<br/>
+
+### ✦ What is this?
+
+A fully **local** web app that downloads audio from any YouTube video and converts it to MP3 — all running on your own machine. No APIs, no third-party services, no size limits.
+
+Built with **Python + Flask** on the backend and a single dark-themed HTML file as the frontend. No npm, no build step, no dependencies beyond `pip install`.
+
+<br/>
+
+### ✦ Features
+
+<br/>
+
+<div align="center">
+
+| | Feature | Details |
+|:---:|---|---|
+| 🎧 | **MP3 download** | Any public YouTube video or short |
+| 🔊 | **Quality selector** | 128 / 192 / 320 kbps |
+| 📊 | **Live progress bar** | Real-time download + conversion tracking |
+| 📁 | **Built-in library** | Browse and re-download past files |
+| 🌐 | **Bilingual UI** | Switch between English and Spanish in one click |
+| 🌑 | **Dark purple UI** | Clean, local-first interface |
+| ⚡ | **Zero build step** | No npm, no webpack, no nonsense |
+
+</div>
+
+<br/>
+
+### ✦ Prerequisites
+
+You need two things installed before running this:
+
+- **Python 3.10+** → [python.org/downloads](https://www.python.org/downloads/)
+- **ffmpeg** → used to convert audio to MP3
+
+**Install ffmpeg:**
+
+<div align="center">
+
+| Platform | Command |
+|:---:|---|
+| 🪟 Windows | `winget install ffmpeg` |
+| 🍎 macOS | `brew install ffmpeg` |
+| 🐧 Linux | `sudo apt install ffmpeg` |
+
+</div>
+
+Verify: `ffmpeg -version`
+
+<br/>
+
+### ✦ Installation
+
+```bash
+# Clone
+git clone https://github.com/YOUR_USERNAME/yt-mp3.git
+cd yt-mp3
+
+# (Recommended) virtual environment
+python -m venv venv
+source venv/bin/activate      # macOS / Linux
+venv\Scripts\activate         # Windows
+
+# Install
+pip install -r requirements.txt
+
+# Run
+python app.py
+```
+
+Open **[http://localhost:8000](http://localhost:8000)** — done.
+
+<br/>
+
+### ✦ How to use
+
+```
+1  →  Paste a YouTube URL
+2  →  Pick quality  ( 128 / 192 / 320 kbps )
+3  →  Hit  "Download audio"
+4  →  Watch the progress bar
+5  →  Click the green button to save the MP3
+6  →  Find all past downloads in the Library section
+```
+
+Files are saved to the `downloads/` folder inside the project.
+
+<br/>
+
+### ✦ Project structure
+
+```
+yt-mp3/
+├─ app.py              ← Flask server · manages jobs, serves files
+├─ requirements.txt    ← Python deps (flask, yt-dlp)
+├─ downloads/          ← MP3 output folder (auto-created)
+└─ static/
+   └─ index.html       ← Entire frontend · one file · no build
+```
+
+<br/>
+
+### ✦ How it works
+
+```
+Browser  →  POST /api/download  →  Flask spawns thread
+                                       ↓
+                                   yt-dlp fetches audio
+                                       ↓
+                                   ffmpeg converts → .mp3
+                                       ↓
+Browser  ←  GET /api/status     ←  progress polling
+Browser  ←  GET /api/file       ←  file download
+```
+
+<br/>
+
+> [!WARNING]
+> **Local use only.** This app has no authentication or rate limiting.
+> Do not expose it on a public server.
+> Only download content you have the right to download.
+
+<br/>
+
+---
+
+## 🇪🇸 Español
+
+<br/>
+
+### ✦ ¿Qué es esto?
+
+Una app web completamente **local** para descargar audio de cualquier vídeo de YouTube y convertirlo a MP3 — todo corriendo en tu propia máquina. Sin APIs, sin servicios externos, sin límites de tamaño.
+
+Backend en **Python + Flask**, frontend en un único HTML con tema oscuro. Sin npm, sin build step, solo `pip install`.
+
+<br/>
+
+### ✦ Características
+
+<br/>
+
+<div align="center">
+
+| | Función | Detalle |
+|:---:|---|---|
+| 🎧 | **Descarga MP3** | Cualquier vídeo o short público de YouTube |
+| 🔊 | **Selector de calidad** | 128 / 192 / 320 kbps |
+| 📊 | **Barra de progreso en vivo** | Seguimiento en tiempo real de descarga y conversión |
+| 📁 | **Biblioteca integrada** | Consulta y vuelve a bajar archivos anteriores |
+| 🌐 | **Interfaz bilingüe** | Cambia entre inglés y español con un clic |
+| 🌑 | **UI oscura en morado** | Interfaz limpia y local |
+| ⚡ | **Sin build** | Sin npm, sin webpack, sin complicaciones |
+
+</div>
+
+<br/>
+
+### ✦ Requisitos
+
+Necesitas dos cosas instaladas:
+
+- **Python 3.10+** → [python.org/downloads](https://www.python.org/downloads/)
+- **ffmpeg** → convierte el audio a MP3
+
+**Instalar ffmpeg:**
+
+<div align="center">
+
+| Sistema | Comando |
+|:---:|---|
+| 🪟 Windows | `winget install ffmpeg` |
+| 🍎 macOS | `brew install ffmpeg` |
+| 🐧 Linux | `sudo apt install ffmpeg` |
+
+</div>
+
+Verifica: `ffmpeg -version`
+
+<br/>
+
+### ✦ Instalación
+
+```bash
+# Clonar
+git clone https://github.com/TU_USUARIO/yt-mp3.git
+cd yt-mp3
+
+# (Recomendado) entorno virtual
+python -m venv venv
+source venv/bin/activate      # macOS / Linux
+venv\Scripts\activate         # Windows
+
+# Instalar
+pip install -r requirements.txt
+
+# Arrancar
+python app.py
+```
+
+Abre **[http://localhost:8000](http://localhost:8000)** — listo.
+
+<br/>
+
+### ✦ Cómo usar
+
+```
+1  →  Pega una URL de YouTube
+2  →  Elige la calidad  ( 128 / 192 / 320 kbps )
+3  →  Pulsa  "Descargar audio"
+4  →  Mira la barra de progreso
+5  →  Pulsa el botón verde para guardar el MP3
+6  →  Todas las descargas anteriores están en la sección Biblioteca
+```
+
+Los archivos se guardan en la carpeta `downloads/` dentro del proyecto.
+
+<br/>
+
+### ✦ Estructura
+
+```
+yt-mp3/
+├─ app.py              ← Servidor Flask · gestiona trabajos y sirve archivos
+├─ requirements.txt    ← Dependencias Python (flask, yt-dlp)
+├─ downloads/          ← Carpeta de salida MP3 (se crea automáticamente)
+└─ static/
+   └─ index.html       ← Frontend completo · un archivo · sin build
+```
+
+<br/>
+
+> [!WARNING]
+> **Solo uso local.** Esta app no tiene autenticación ni rate limiting.
+> No la expongas en un servidor público.
+> Descarga únicamente contenido que tengas derecho a descargar.
+
+<br/>
+
+---
+
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=7c3aed&height=100&section=footer" width="100%"/>
+
+<sub>Made with 🟣 in Spain · MIT License</sub>
+
+</div>
