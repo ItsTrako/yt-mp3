@@ -86,7 +86,7 @@ Verify: `ffmpeg -version`
 
 ```bash
 # Clone
-git clone https://github.com/YOUR_USERNAME/yt-mp3.git
+git clone https://github.com/YOUR_ItsTrako/yt-mp3.git
 cd yt-mp3
 
 # (Recommended) virtual environment
